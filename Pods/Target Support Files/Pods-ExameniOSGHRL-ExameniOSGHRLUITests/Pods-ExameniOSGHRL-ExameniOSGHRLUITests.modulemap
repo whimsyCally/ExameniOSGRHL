@@ -1,6 +1,0 @@
-framework module Pods_ExameniOSGHRL_ExameniOSGHRLUITests {
-  umbrella header "Pods-ExameniOSGHRL-ExameniOSGHRLUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
