@@ -7,8 +7,8 @@
 
 import Foundation
 import FirebaseStorage
+
 final class MainTableViewModel : ObservableObject {
-    
     let acceptableChars: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
     
     func soloCaracteresAlfabeticos(text:String) -> String{
@@ -16,8 +16,6 @@ final class MainTableViewModel : ObservableObject {
             if !CharacterSet(
                 charactersIn: acceptableChars)
                 .isSuperset(of:CharacterSet(charactersIn: String(lastChar))) {
-                
-               // self.name =  name.replacingOccurrences(of: String(lastChar) , with: "")
                 return text.replacingOccurrences(of: String(lastChar) , with: "")
             }
         }
@@ -25,28 +23,27 @@ final class MainTableViewModel : ObservableObject {
     }
     
     func uploadFile(fileUrl: URL,fileName name:String) {
-      
+        
         let fileExtension = fileUrl.pathExtension
         let fileName = "\(name).\(fileExtension)"
-
+        
         let storageReference = Storage.storage().reference().child(fileName)
-        let currentUploadTask = storageReference.putFile(from: fileUrl, metadata: nil) { (storageMetaData, error) in
-          if let error = error {
-            print("Error al carga la imagen.: \(error.localizedDescription)")
-            return
-          }
-           
-          print("Image file: \(fileName)")
-            print("SE SUBIO CORRECTAMENTE")
-                                                                                    
-          storageReference.downloadURL { (url, error) in
-            if let error = error  {
-              print("Error al obtener el URL para descargar: \(error.localizedDescription)")
-              return
+        storageReference.putFile(from: fileUrl, metadata: nil) { (storageMetaData, error) in
+            if let error = error {
+                print("Error al carga la imagen.: \(error.localizedDescription)")
+                return
             }
-            print("url de descarga del archivo: \(fileName) es: \(url!.absoluteString)")
-          }
+            
+            print("Image file: \(fileName)")
+            print("Archivo cargado correctamente...")
+            
+            storageReference.downloadURL { (url, error) in
+                if let error = error  {
+                    print("Error al obtener el URL para descargar: \(error.localizedDescription)")
+                    return
+                }
+                print("url de descarga del archivo: \(fileName) es: \(url!.absoluteString)")
+            }
         }
-     
     }
 }

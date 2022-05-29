@@ -22,6 +22,14 @@
 		9A531BE428419C2600A15F11 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A531BE328419C2600A15F11 /* Permissions.swift */; };
 		9A531BE528419C2600A15F11 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A531BE328419C2600A15F11 /* Permissions.swift */; };
 		9A531BE72841B28800A15F11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A531BE62841B28800A15F11 /* GoogleService-Info.plist */; };
+		F36EA8A52842FFEB00CBE4DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8A42842FFEB00CBE4DC /* Extensions.swift */; };
+		F36EA8A62842FFEB00CBE4DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8A42842FFEB00CBE4DC /* Extensions.swift */; };
+		F36EA8A92843011700CBE4DC /* RealTimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */; };
+		F36EA8AA2843011700CBE4DC /* RealTimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */; };
+		F36EA8AC284302CF00CBE4DC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AB284302CF00CBE4DC /* CameraManager.swift */; };
+		F36EA8AD284302CF00CBE4DC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AB284302CF00CBE4DC /* CameraManager.swift */; };
+		F36EA8AF2843034100CBE4DC /* MainTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AE2843034100CBE4DC /* MainTableCells.swift */; };
+		F36EA8B02843034100CBE4DC /* MainTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AE2843034100CBE4DC /* MainTableCells.swift */; };
 		F42859C08454FB3E2952B2E4 /* Pods_ExameniOSGHRL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8E12EA2E69A74BA93E3B7 /* Pods_ExameniOSGHRL.framework */; };
 		F6C5C79034AC5871558E9CEF /* Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA07ED2B1E91BCB77FE6BC8 /* Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +74,10 @@
 		A65949A51C5D3875DFE0C88B /* Pods-ExameniOSGHRL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExameniOSGHRL.debug.xcconfig"; path = "Target Support Files/Pods-ExameniOSGHRL/Pods-ExameniOSGHRL.debug.xcconfig"; sourceTree = "<group>"; };
 		BFA07ED2B1E91BCB77FE6BC8 /* Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F8E12EA2E69A74BA93E3B7 /* Pods_ExameniOSGHRL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExameniOSGHRL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F36EA8A42842FFEB00CBE4DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDatabase.swift; sourceTree = "<group>"; };
+		F36EA8AB284302CF00CBE4DC /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		F36EA8AE2843034100CBE4DC /* MainTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCells.swift; sourceTree = "<group>"; };
 		F8BEEDDE416CA94CCFED7ACB /* Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig"; path = "Target Support Files/Pods-ExameniOSGHRL-ExameniOSGHRLUITests/Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				9A531BDC2841775D00A15F11 /* MainTable */,
+				F36EA8A7284300C600CBE4DC /* Firebase */,
+				F36EA8A32842FE7F00CBE4DC /* Utils */,
 				9A531BB2284176FA00A15F11 /* ExameniOSGHRLApp.swift */,
 				9A531BB4284176FA00A15F11 /* ContentView.swift */,
 				9A531BE62841B28800A15F11 /* GoogleService-Info.plist */,
@@ -162,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				9A531BDD2841776F00A15F11 /* MainTable.swift */,
+				F36EA8AE2843034100CBE4DC /* MainTableCells.swift */,
 				9A531BE0284196B600A15F11 /* MainTableViewModel.swift */,
 			);
 			path = MainTable;
@@ -188,6 +203,23 @@
 				35B7611C685BCA89E22F7334 /* Pods_ExameniOSGHRLTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F36EA8A32842FE7F00CBE4DC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F36EA8A42842FFEB00CBE4DC /* Extensions.swift */,
+				F36EA8AB284302CF00CBE4DC /* CameraManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F36EA8A7284300C600CBE4DC /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,11 +461,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36EA8AF2843034100CBE4DC /* MainTableCells.swift in Sources */,
 				9A531BE428419C2600A15F11 /* Permissions.swift in Sources */,
+				F36EA8A52842FFEB00CBE4DC /* Extensions.swift in Sources */,
+				F36EA8AC284302CF00CBE4DC /* CameraManager.swift in Sources */,
 				9A531BE1284196B600A15F11 /* MainTableViewModel.swift in Sources */,
 				9A531BB5284176FA00A15F11 /* ContentView.swift in Sources */,
 				9A531BB3284176FA00A15F11 /* ExameniOSGHRLApp.swift in Sources */,
 				9A531BDE2841776F00A15F11 /* MainTable.swift in Sources */,
+				F36EA8A92843011700CBE4DC /* RealTimeDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36EA8A62842FFEB00CBE4DC /* Extensions.swift in Sources */,
+				F36EA8AD284302CF00CBE4DC /* CameraManager.swift in Sources */,
 				9A531BE528419C2600A15F11 /* Permissions.swift in Sources */,
 				9A531BDF2841776F00A15F11 /* MainTable.swift in Sources */,
 				9A531BE2284196B600A15F11 /* MainTableViewModel.swift in Sources */,
 				9A531BC42841770100A15F11 /* ExameniOSGHRLTests.swift in Sources */,
+				F36EA8AA2843011700CBE4DC /* RealTimeDatabase.swift in Sources */,
+				F36EA8B02843034100CBE4DC /* MainTableCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,8 +643,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,8 +676,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
