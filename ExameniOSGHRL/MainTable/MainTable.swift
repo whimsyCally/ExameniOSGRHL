@@ -11,9 +11,11 @@ struct MainTable: View {
     @StateObject var viewModel = MainTableViewModel()
     @StateObject var fbSettings = RealTimeDatabase()
     @State var name : String = ""
-    @State var imageURL : URL = URL(string: "www.google.com")!
+    @State var imageURL : String = ""
     @State var bgColor : Color = Color.white
-    
+    @State var showAlert : Bool = false
+    @State var alertMessage : String = ""
+    @State var isLoading : Bool = false
     var body: some View {
         VStack{
             ScrollView(showsIndicators:false){
@@ -26,7 +28,9 @@ struct MainTable: View {
                             .padding()
                     case .pictureCell:
                         PictureCell(imageURL: $imageURL,
-                                    bgColor: $bgColor)
+                                    bgColor: $bgColor,
+                                    showAlert: $showAlert,
+                                    alertMessage: $alertMessage)
                             .padding()
                     case .chartCell:
                         ChartCell(bgColor: $bgColor)
@@ -40,25 +44,44 @@ struct MainTable: View {
                     bgColor = color
                 }
             }
-            Button {
-                if name != "" {
-                    //Cargando Imagen a Storages de Firebase
-                    viewModel.uploadFile(fileUrl: imageURL,
-                                         fileName: "\(name)")
-                }else{
-                    print("Por favor indique un nombre")
-                }
-                
-            } label: {
-                Text("Enviar Imagen")
-                    .foregroundColor(Color.white)
-            }.padding()
-                .background(Color.black)
-                .clipShape(Capsule())
-                .padding(.top)
-            
+            if !isLoading {
+                Button {
+                    if name != "" && imageURL != ""{
+                        isLoading = true
+                        //Cargando Imagen a Storages de Firebase
+                        viewModel.uploadFile(fileUrlString: imageURL,
+                                             fileName: "\(name)") { resultado in
+                            isLoading = false
+                            if resultado {
+                                alertMessage = "Archivo cargado exitosamente."
+                                showAlert = true
+                            }else {
+                                alertMessage = "Error al cargar el archivo."
+                                showAlert = true
+                            }
+                        }
+                    }else{
+                        alertMessage = "Por favor complete el nombre y tome una foto."
+                        showAlert = true
+                    }
+                } label: {
+                    Text("Enviar Imagen")
+                        .foregroundColor(Color.white)
+                }.padding()
+                    .background(Color.black)
+                    .clipShape(Capsule())
+                    .padding(.top)
+            }else {
+                Text("Cargando Imagen...")
+                    .fontWeight(.bold)
+                ProgressView()
+            }
         }.padding()
             .background(bgColor)
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("\(alertMessage)")
+                )}
     }
 }
 

@@ -22,7 +22,11 @@ final class MainTableViewModel : ObservableObject {
         return text
     }
     
-    func uploadFile(fileUrl: URL,fileName name:String) {
+    func uploadFile(fileUrlString: String,fileName name:String, completion: @escaping (Bool) -> ()) {
+        guard let fileUrl = URL(string: fileUrlString) else {
+            print("PROBLEMA AL FORMAR EL URL CON: \(fileUrlString)")
+            return
+        }
         
         let fileExtension = fileUrl.pathExtension
         let fileName = "\(name).\(fileExtension)"
@@ -43,7 +47,9 @@ final class MainTableViewModel : ObservableObject {
                     return
                 }
                 print("url de descarga del archivo: \(fileName) es: \(url!.absoluteString)")
+                completion(true)
             }
+            
         }
     }
 }

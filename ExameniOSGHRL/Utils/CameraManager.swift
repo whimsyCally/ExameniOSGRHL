@@ -26,7 +26,7 @@ extension CaptureImageView: UIViewControllerRepresentable {
 struct CaptureImageView{
     @Binding var isShown: Bool
     @Binding var image: Image?
-    @Binding var imageURL : URL
+    @Binding var imageURL : String
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(isShown: $isShown, image: $image,imageURL: $imageURL)
@@ -37,9 +37,9 @@ struct CaptureImageView{
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @Binding var isCoordinatorShown: Bool
     @Binding var imageInCoordinator: Image?
-    @Binding var imageURL : URL
+    @Binding var imageURL : String
     
-    init(isShown: Binding<Bool>, image: Binding<Image?>,imageURL:Binding<URL>) {
+    init(isShown: Binding<Bool>, image: Binding<Image?>,imageURL:Binding<String>) {
         _isCoordinatorShown = isShown
         _imageInCoordinator = image
         _imageURL = imageURL
@@ -61,7 +61,7 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         do {
             try pngData?.write(to: imageURL2);
         } catch { }
-        imageURL = imageURL2
+        imageURL = imageURL2.absoluteString
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         isCoordinatorShown = false

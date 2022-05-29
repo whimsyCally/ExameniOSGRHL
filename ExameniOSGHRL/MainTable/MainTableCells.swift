@@ -34,8 +34,10 @@ struct PictureCell : View {
     @StateObject var cameraManager = CameraManager()
     @State private var showCaptureImageView = false
     @State var image: Image? = nil
-    @Binding var imageURL : URL
+    @Binding var imageURL : String
     @Binding var bgColor : Color
+    @Binding var showAlert : Bool
+    @Binding var alertMessage : String 
     var body: some View {
         HStack{
             if image == nil {
@@ -59,20 +61,29 @@ struct PictureCell : View {
                                      imageURL: $imageURL)
                 })
             Spacer()
-        }.frame(maxWidth:.infinity)
-            .frame(height: 70)
-            .background(bgColor)
-            .padding(.leading)
-            .onTapGesture {
-                cameraManager.requestPermission { access in
+        }
+        .frame(maxWidth:.infinity)
+        .frame(height: 70)
+        .background(bgColor)
+        .padding(.leading)
+        .onTapGesture {
+            cameraManager.requestPermission { access in
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     if access {
                         print("permiso concedido")
                         showCaptureImageView = true
                     }else{
-                        print("necesitamos el permiso")
+                        alertMessage = "Parece que no concediste el permiso, ve a la configuracion y aceptalo."
+                        showAlert = true
                     }
+                }else {
+                    print("Parece que no hay camara disponible!")
+                    alertMessage = "Parece que no hay camara disponible, intenta en un dispositivo fisico."
+                    showAlert = true
                 }
             }
+        }
+        
     }
 }
 
