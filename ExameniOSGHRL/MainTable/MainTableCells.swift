@@ -87,7 +87,7 @@ struct ChartCell : View {
                 showDetail = true
             }
             .sheet(isPresented: $showDetail) {
-                ChartsDetailView(bgColor: $bgColor)
+                UsersView(bgColor: $bgColor)
             }
     }
 }

@@ -11,7 +11,7 @@ struct MainTable: View {
     @StateObject var viewModel = MainTableViewModel()
     @StateObject var fbSettings = RealTimeDatabase()
     @State var name : String = ""
-    @State var imageURL : URL = URL(string: "")!
+    @State var imageURL : URL = URL(string: "www.google.com")!
     @State var bgColor : Color = Color.white
     
     var body: some View {

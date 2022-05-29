@@ -30,6 +30,12 @@
 		F36EA8AD284302CF00CBE4DC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AB284302CF00CBE4DC /* CameraManager.swift */; };
 		F36EA8AF2843034100CBE4DC /* MainTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AE2843034100CBE4DC /* MainTableCells.swift */; };
 		F36EA8B02843034100CBE4DC /* MainTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8AE2843034100CBE4DC /* MainTableCells.swift */; };
+		F36EA8B32843604000CBE4DC /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B22843604000CBE4DC /* UsersModel.swift */; };
+		F36EA8B42843604000CBE4DC /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B22843604000CBE4DC /* UsersModel.swift */; };
+		F36EA8B62843606200CBE4DC /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B52843606200CBE4DC /* UsersView.swift */; };
+		F36EA8B72843606200CBE4DC /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B52843606200CBE4DC /* UsersView.swift */; };
+		F36EA8B92843608400CBE4DC /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B82843608400CBE4DC /* UsersViewModel.swift */; };
+		F36EA8BA2843608400CBE4DC /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EA8B82843608400CBE4DC /* UsersViewModel.swift */; };
 		F42859C08454FB3E2952B2E4 /* Pods_ExameniOSGHRL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8E12EA2E69A74BA93E3B7 /* Pods_ExameniOSGHRL.framework */; };
 		F6C5C79034AC5871558E9CEF /* Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA07ED2B1E91BCB77FE6BC8 /* Pods_ExameniOSGHRL_ExameniOSGHRLUITests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +84,9 @@
 		F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDatabase.swift; sourceTree = "<group>"; };
 		F36EA8AB284302CF00CBE4DC /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		F36EA8AE2843034100CBE4DC /* MainTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCells.swift; sourceTree = "<group>"; };
+		F36EA8B22843604000CBE4DC /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		F36EA8B52843606200CBE4DC /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		F36EA8B82843608400CBE4DC /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		F8BEEDDE416CA94CCFED7ACB /* Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig"; path = "Target Support Files/Pods-ExameniOSGHRL-ExameniOSGHRLUITests/Pods-ExameniOSGHRL-ExameniOSGHRLUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +143,7 @@
 		9A531BB1284176FA00A15F11 /* ExameniOSGHRL */ = {
 			isa = PBXGroup;
 			children = (
+				F36EA8B12843602900CBE4DC /* Users */,
 				9A531BDC2841775D00A15F11 /* MainTable */,
 				F36EA8A7284300C600CBE4DC /* Firebase */,
 				F36EA8A32842FE7F00CBE4DC /* Utils */,
@@ -220,6 +230,16 @@
 				F36EA8A82843011700CBE4DC /* RealTimeDatabase.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		F36EA8B12843602900CBE4DC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				F36EA8B52843606200CBE4DC /* UsersView.swift */,
+				F36EA8B22843604000CBE4DC /* UsersModel.swift */,
+				F36EA8B82843608400CBE4DC /* UsersViewModel.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,13 +482,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36EA8AF2843034100CBE4DC /* MainTableCells.swift in Sources */,
+				F36EA8B92843608400CBE4DC /* UsersViewModel.swift in Sources */,
 				9A531BE428419C2600A15F11 /* Permissions.swift in Sources */,
+				F36EA8B62843606200CBE4DC /* UsersView.swift in Sources */,
 				F36EA8A52842FFEB00CBE4DC /* Extensions.swift in Sources */,
 				F36EA8AC284302CF00CBE4DC /* CameraManager.swift in Sources */,
 				9A531BE1284196B600A15F11 /* MainTableViewModel.swift in Sources */,
 				9A531BB5284176FA00A15F11 /* ContentView.swift in Sources */,
 				9A531BB3284176FA00A15F11 /* ExameniOSGHRLApp.swift in Sources */,
 				9A531BDE2841776F00A15F11 /* MainTable.swift in Sources */,
+				F36EA8B32843604000CBE4DC /* UsersModel.swift in Sources */,
 				F36EA8A92843011700CBE4DC /* RealTimeDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,14 +500,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36EA8BA2843608400CBE4DC /* UsersViewModel.swift in Sources */,
 				F36EA8A62842FFEB00CBE4DC /* Extensions.swift in Sources */,
 				F36EA8AD284302CF00CBE4DC /* CameraManager.swift in Sources */,
 				9A531BE528419C2600A15F11 /* Permissions.swift in Sources */,
 				9A531BDF2841776F00A15F11 /* MainTable.swift in Sources */,
+				F36EA8B72843606200CBE4DC /* UsersView.swift in Sources */,
 				9A531BE2284196B600A15F11 /* MainTableViewModel.swift in Sources */,
 				9A531BC42841770100A15F11 /* ExameniOSGHRLTests.swift in Sources */,
 				F36EA8AA2843011700CBE4DC /* RealTimeDatabase.swift in Sources */,
 				F36EA8B02843034100CBE4DC /* MainTableCells.swift in Sources */,
+				F36EA8B42843604000CBE4DC /* UsersModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
